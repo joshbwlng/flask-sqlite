@@ -1,0 +1,15 @@
+version: "2.1"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile.template
+    ports:
+      - "80:3000"
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal: {}
